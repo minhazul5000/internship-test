@@ -18,22 +18,12 @@
                 <div class="col-md-9 offset-md-3">
                     <section class="p-3">
                         <article>
-                            <h2>All Post</h2>
+                            <h2>{{$post->title}}</h2>
+                            <h4>Author- {{$post->user->name}}</h4>
                             
-                            <div class="row">
-                                @foreach ($posts as $post)
-                                    <div class="col-md-4 mb-2">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <img src="{{$post->image}}" width="100%" alt="">
-                                            <p class="mt-3">{{substr($post->title,0,30)}}</p>
-                                            <a href="{{route('post',$post->id)}}">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endforeach
-                                
-                            </div>
+                            <p>
+                                {{$post->description}}
+                            </p>
                         </article>
                     </section>
                     <footer class="bg-dark p-4">
